@@ -1,0 +1,1 @@
+update `fx_wechat_menus` set `link_url`='/WXClient/faultList/lt/10/title/1' where id = 3;

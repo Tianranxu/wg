@@ -1,0 +1,1 @@
+UPDATE `fx_sys_auth_rule` SET `module` = 'Home/Chargeitems', `name` = 'Home/Chargeitems/clearItem', `title` = '清除费项', `module_name` = '费项管理' WHERE id = 268;

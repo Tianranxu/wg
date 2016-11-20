@@ -1,0 +1,2 @@
+INSERT INTO `fx_sys_auth_rule` (id,module,type,name,title,module_name) VALUES(221,'Home/Import',1,'Home/Import/wrong','导入错误日志','导入管理');
+UPDATE `fx_sys_role` SET rule_id = concat(rule_id, ',221') WHERE id = 3;

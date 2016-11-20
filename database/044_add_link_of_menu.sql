@@ -1,0 +1,1 @@
+update fx_wechat_menus set link_url = '/WXClient/connectus' where id = '6';

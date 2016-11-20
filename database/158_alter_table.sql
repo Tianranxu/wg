@@ -1,0 +1,1 @@
+ALTER TABLE `fx_contract_manage`  ADD COLUMN `cm_id` INT(11) UNSIGNED NOT NULL ;

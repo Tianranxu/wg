@@ -1,0 +1,2 @@
+INSERT INTO `fx_sys_auth_rule` (id,module,type,name,title,module_name) VALUES(217,'Home/Publicno',1,'Home/Publicno/createApiKey','生成API秘钥','公众号管理');
+UPDATE `fx_sys_role` SET rule_id = concat(rule_id, ',217') WHERE id = 3;

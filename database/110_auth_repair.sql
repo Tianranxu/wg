@@ -1,0 +1,1 @@
+UPDATE `fx_sys_role` SET rule_id = concat(rule_id, ',159') WHERE id = 3;

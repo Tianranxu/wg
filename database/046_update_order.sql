@@ -1,0 +1,1 @@
+ALTER TABLE `fx_order_manage` DROP COLUMN `modify_time`,ADD COLUMN `status`  tinyint(1) NOT NULL DEFAULT 2 COMMENT '状态 2-待缴费 3-已缴费' AFTER `total`;

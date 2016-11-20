@@ -1,0 +1,1 @@
+ALTER TABLE `fx_weixin_user` ADD INDEX `openid` (`openid`) USING BTREE COMMENT '用户的标识，对当前公众号唯一 ',ADD INDEX `cm_id` (`cm_id`) USING BTREE COMMENT '企业ID';

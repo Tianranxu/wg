@@ -1,0 +1,1 @@
+ALTER TABLE `fx_weixin_user` ADD COLUMN `mobile`  int(11) UNSIGNED NULL DEFAULT NULL COMMENT '微信用户手机号码' AFTER `id`;

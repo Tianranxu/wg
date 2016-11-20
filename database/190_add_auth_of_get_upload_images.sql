@@ -1,0 +1,2 @@
+INSERT INTO `fx_sys_auth_rule` (id,module,type,name,title,module_name) VALUES(504,'Home/Imgtxt',1,'Home/Imgtxt/getUploadImages','simditor图片上传','图文消息管理');
+UPDATE `fx_sys_role` SET rule_id = concat(rule_id, ',504') WHERE id = 3;

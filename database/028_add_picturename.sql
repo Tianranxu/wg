@@ -1,0 +1,1 @@
+ALTER TABLE `fx_slide` ADD COLUMN `name` varchar(100) NOT NULL COMMENT '图片名称';

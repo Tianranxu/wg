@@ -1,0 +1,2 @@
+INSERT INTO `fx_sys_auth_rule` (id,module,type,name,title,module_name) VALUES(226,'Home/Chargeitems',1,'Home/Chargeitems/bind','房产收费绑定','收费项目管理');
+UPDATE `fx_sys_role` SET rule_id = concat(rule_id, ',226') WHERE id = 3;

@@ -1,0 +1,2 @@
+UPDATE `fx_sys_auth_rule` SET `name`='Home/Form/form',`title`='新建/编辑表单',`module_name`='新建/编辑表单' WHERE `id`=196;
+UPDATE `fx_sys_auth_rule` SET `name`='Home/Form/doForm',`title`='处理表单',`module_name`='处理表单' WHERE `id`=197;

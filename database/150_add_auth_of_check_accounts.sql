@@ -1,0 +1,2 @@
+INSERT INTO `fx_sys_auth_rule` (id,module,type,name,title,module_name) VALUES(235,'Home/Payorder',1,'Home/Payorder/checkAccountsByOrder','检查订单中是否存在已缴账单','待缴费管理');
+UPDATE `fx_sys_role` SET rule_id = concat(rule_id, ',235') WHERE id = 3;

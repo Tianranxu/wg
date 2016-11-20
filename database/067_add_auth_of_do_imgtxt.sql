@@ -1,0 +1,2 @@
+INSERT INTO `fx_sys_auth_rule` (id,module,type,name,title,module_name) VALUES(202,'Home/Imgtxt',1,'Home/Imgtxt/doImgtxt','新建/编辑图文信息','图文信息');
+UPDATE `fx_sys_role` SET rule_id = concat(rule_id, ',202') WHERE id = 3;

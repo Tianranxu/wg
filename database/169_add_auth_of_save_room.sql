@@ -1,0 +1,2 @@
+INSERT INTO `fx_sys_auth_rule` (id,module,type,name,title,module_name) VALUES(243,'Home/Room',1,'Home/Room/saveRoom','保存房源/中止托管','房源管理');
+UPDATE `fx_sys_role` SET rule_id = concat(rule_id, ',243') WHERE id = 3;

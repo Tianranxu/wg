@@ -1,0 +1,1 @@
+DELETE from `fx_publicno` WHERE isCancel = 1;

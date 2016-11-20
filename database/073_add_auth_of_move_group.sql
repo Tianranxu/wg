@@ -1,0 +1,2 @@
+INSERT INTO `fx_sys_auth_rule` (id,module,type,name,title,module_name) VALUES(207,'Home/Piclibrary',1,'Home/Piclibrary/moveGroup','图片库-移动分组','图片库');
+UPDATE `fx_sys_role` SET rule_id = concat(rule_id, ',207') WHERE id = 3;

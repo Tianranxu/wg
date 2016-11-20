@@ -1,0 +1,1 @@
+ALTER TABLE `fx_accounts_charges` ADD COLUMN `remark`  varchar(280) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '备注' AFTER `month`;

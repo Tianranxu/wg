@@ -1,0 +1,1 @@
+UPDATE `fx_sys_auth_rule` SET `module` = 'Home/Pay', `name` = 'Home/Pay/payDetails', `title` = '收支明细', `module_name` = '账单管理' WHERE id = 273;

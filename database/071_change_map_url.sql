@@ -1,0 +1,2 @@
+update `fx_sys_micserve` set name = '社区地图' where id = 10;
+update `fx_sys_micserve` set link_url = 'http://map.baidu.com/mobile/webapp/search/search/qt=s&da_src=pcmappg.searchBox.sugg&from=webmap&force=newsample&force=newsample&tn=B_NORMAL_MAP&hb=B_SATELLITE_STREET&openna=1&vt=map&ecom=0&wd=' where id = 10;

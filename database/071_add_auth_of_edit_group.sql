@@ -1,0 +1,2 @@
+INSERT INTO `fx_sys_auth_rule` (id,module,type,name,title,module_name) VALUES (253,'Home/Form',1,'Home/Form/edit_group','编辑分组','表单管理');
+UPDATE `fx_sys_role` SET rule_id = concat(rule_id,',253') WHERE id = 3;

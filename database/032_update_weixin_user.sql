@@ -1,0 +1,1 @@
+ALTER TABLE `fx_weixin_user` ADD COLUMN `cm_id`  int(11) UNSIGNED NULL DEFAULT NULL COMMENT '企业ID' AFTER `groupid`;

@@ -1,0 +1,1 @@
+UPDATE `fx_sys_wechat_templ` SET `name` = '定做模板1',`reject` = 22 WHERE `id` = 2;

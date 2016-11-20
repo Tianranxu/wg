@@ -1,0 +1,1 @@
+ALTER TABLE `fx_imgtxt_manage` ADD COLUMN `modify_time`  datetime NULL DEFAULT NULL COMMENT 'ÐÞ¸ÄÊ±¼ä' AFTER `category_id`;

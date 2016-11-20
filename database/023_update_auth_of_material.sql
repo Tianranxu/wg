@@ -1,0 +1,2 @@
+INSERT INTO `fx_sys_auth_rule` (id,module,type,name,title) VALUES(140,'Home/Material',1,'Home/Material/edit_category_name','编辑分类名称');
+UPDATE `fx_sys_role` SET rule_id = concat(rule_id, ',140') WHERE id = 3;

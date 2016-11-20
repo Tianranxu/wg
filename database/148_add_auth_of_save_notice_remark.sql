@@ -1,0 +1,2 @@
+INSERT INTO `fx_sys_auth_rule` (id,module,type,name,title,module_name) VALUES(234,'Home/Print',1,'Home/Print/saveNoticeRemark','通知单-保存备注','打印管理');
+UPDATE `fx_sys_role` SET rule_id = concat(rule_id, ',234') WHERE id = 3;

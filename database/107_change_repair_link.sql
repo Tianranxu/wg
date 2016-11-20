@@ -1,0 +1,1 @@
+update `fx_wechat_menus` set link_url = '/WXAdd/newRepair' where id = 3;

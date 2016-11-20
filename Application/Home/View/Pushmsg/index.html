@@ -1,0 +1,134 @@
+<script language="javascript" src='__PUBLIC__/js/sprintf.min.js'></script>
+<i class="fa fa-bell fa-5" rel="1"><span id="notice-total">0</span></i>
+<ul class="new_msg"></ul>
+<script type="text/javascript">
+    var compid = '{$Think.get.compid}';
+    $(function () {
+        /**消息铃铛点击事件**/
+        $(document).bind('click', function (e) {
+            if ($(e.target).closest('.fa-bell').attr('rel') == 1 || $(e.target).closest('.new_msg').attr('class') == 'new_msg') {
+                //点击铃铛且通知列表为显示时显示列表
+                $('.new_msg').fadeIn();
+                $('.fa-bell').attr('rel', 0);
+            } else {
+                //点击铃铛且通知列表为隐藏时以及点击空白处时隐藏列表
+                $('.new_msg').fadeOut();
+                $('.fa-bell').attr('rel', 1);
+            }
+        });
+
+        /**初始化消息通知**/
+        var url = '__APP__/pushmsg/index/compid/' + compid;
+        msgInit(url);
+
+        /**消息通知初始化**/
+        function msgInit(url) {
+            var msgEvent;
+            msgEvent = new EventSource(url);
+
+            try {
+                msgEvent.onmessage = function (e) {
+                    handleNoticeDatas($.parseJSON(e.data));
+                };
+            } catch (err) {
+                return false;
+            }
+        }
+    });
+
+    /**
+     * 处理遍历通知消息数据
+     */
+    function handleNoticeDatas(lists) {
+        //消息总数
+        $('#notice-total').text((lists.total > 99) ? '99+' : lists.total);
+        //各企业消息遍历
+        var datas = lists.lists;
+        var msgHtml = '';
+        if (datas.length == 0) {
+            msgHtml = emptyNoticeTpl();
+        } else {
+            for (var i = 0; i < datas.length; i++) {
+                var headHtml = sprintf(headNoticeTpl(), datas[i].cm_name, ((datas[i].total > 99) ? '99+' : datas[i].total));
+                var middleHtml = '';
+                var footHtml = '</li>';
+                if (datas[i].cm_type == '{$Think.config.COMPANY_TYPE.PROPERTY}') middleHtml = sprintf(propertyNoticeTpl(), datas[i].unacceptFault.url, ((datas[i].unacceptFault.total > 99) ? '99+' : datas[i].unacceptFault.total), datas[i].shiftFault.url, ((datas[i].shiftFault.total > 99) ? '99+' : datas[i].shiftFault.total), datas[i].feedback.url, ((datas[i].feedback.total > 99) ? '99+' : datas[i].feedback.total), datas[i].uncheckForm.url, ((datas[i].uncheckForm.total > 99) ? '99+' : datas[i].uncheckForm.total), datas[i].weixinPropertyPay.url, ((datas[i].weixinPropertyPay.total > 99) ? '99+' : datas[i].weixinPropertyPay.total), datas[i].weixinCarPay.url, ((datas[i].weixinCarPay.total > 99) ? '99+' : datas[i].weixinCarPay.total));
+                if (datas[i].cm_type == '{$Think.config.COMPANY_TYPE.REPAIR}') middleHtml = sprintf(repairNoticeTpl(), datas[i].unacceptFault.url, ((datas[i].unacceptFault.total > 99) ? '99+' : datas[i].unacceptFault.total));
+                if (datas[i].cm_type == '{$Think.config.COMPANY_TYPE.WORKSTATION}') middleHtml = sprintf(workstationNoticeTpl(), datas[i].uncheckForm.url, ((datas[i].uncheckForm.total > 99) ? '99+' : datas[i].uncheckForm.total), datas[i].feedback.url, ((datas[i].feedback.total > 99) ? '99+' : datas[i].feedback.total));
+                msgHtml += headHtml + middleHtml + footHtml;
+            }
+        }
+        $('.new_msg').html(msgHtml);
+    }
+
+    /**
+     * 空消息通知模板
+     * @returns {strings}
+     */
+    function emptyNoticeTpl() {
+        return '<li style="text-align: center;line-height: 50px;"><a href="javascript:void(0)">暂无消息通知</a></li>';
+    }
+
+    /**
+     * 消息通知企业名称模板
+     * @returns {strings}
+     */
+    function headNoticeTpl() {
+        return '<li class="navbar"><i>%s</i><span class="noticeCompTotal">%s</span></li>';
+    }
+
+    /**
+     * 物业公司消息通知模板
+     * @returns {string}
+     */
+    function propertyNoticeTpl() {
+        return '<li><a href="%s"><i class="fa fa-clock-o fa-3"></i>未接故障<span class="noticeUnacceptFault">%s</span></a></li>\
+                    <li><a href="%s"><i class="fa fa-share-square-o fa-3"></i>转单故障<span class="noticeUnacceptFault">%s</span></a></li>\
+                    <li><a href="%s"><i class="fa fa-commenting-o fa-3"></i>意见反馈<span class="noticeFeedback">%s</span></a></li>\
+                    <li><a href="%s"><i class="fa fa-files-o fa-3"></i>待审核表单<span class="noticeUncheckForm">%s</span></a></li>\
+                    <li><a href="javascript:void(0)" onclick="hasReadWxUserPay(this,4,\'%s\')"><i class="fa fa-rmb fa-3"></i>微信物业缴费<span class="noticeWxPropertyPay">%s</span></a></li>\
+                    <li><a href="javascript:void(0)" onclick="hasReadWxUserPay(this,5,\'%s\')"><i class="fa fa-rmb fa-3"></i>微信车辆缴费<span class="noticeWxCarPay">%s</span></a></li>';
+    }
+
+    /**
+     * 维修公司消息通知模板
+     * @returns {string}
+     */
+    function repairNoticeTpl() {
+        return '<li><a href="%s"><i class="fa fa-wrench fa-3"></i>未接故障<span>%s</span></a></li>';
+    }
+
+    /**
+     * 工作站消息通知模板
+     * @returns {string}
+     */
+    function workstationNoticeTpl() {
+        return '<li><a href="%s"><i class="fa fa-files-o fa-3"></i>待审核表单<span>%s</span></a></li>\
+                    <li><a href="%s"><i class="fa fa-commenting-o fa-3"></i>意见反馈<span>%s</span></a></li>';
+    }
+
+    /**
+     * 点击微信用户转换为已阅读状态
+     * @param obj   所选择对象
+     * @param compid    企业ID
+     */
+    function hasReadWxUserPay(obj, noticeType, jumpUrl) {
+        var url = '__APP__/pushmsg/changeWxPayNoticeStatus.html';
+        if (compid) url = url + '?compid=' + compid;
+        $.ajax({
+            type: 'post',
+            url: url,
+            data: {type: noticeType, status: 1},
+            dataType: 'json',
+            success: function (msg) {
+                if (!msg.flag) return false;
+                $(obj).find('.noticeWxUserPay').text(0);
+                window.location.href = jumpUrl;
+            },
+            timeout: 30000,
+            error: function () {
+                return false;
+            }
+        });
+    }
+</script>

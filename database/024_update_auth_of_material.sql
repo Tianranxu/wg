@@ -1,0 +1,2 @@
+INSERT INTO `fx_sys_auth_rule` (id,module,type,name,title) VALUES(141,'Home/Material',1,'Home/Material/get_upload_url','ue编辑器获取上传路径');
+UPDATE `fx_sys_role` SET rule_id = concat(rule_id, ',141') WHERE id = 3;

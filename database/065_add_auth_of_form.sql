@@ -1,0 +1,2 @@
+INSERT INTO `fx_sys_auth_rule` (id,module,type,name,title,module_name) VALUES(249,'Home/Form',1,'Home/Form/publish_banpick','发布、禁用、启用表单','表单表单管理');
+UPDATE `fx_sys_role` SET rule_id = concat(rule_id, ',249') WHERE id = 3;

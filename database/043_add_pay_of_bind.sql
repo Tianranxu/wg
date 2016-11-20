@@ -1,0 +1,1 @@
+ALTER TABLE `fx_bind_temp` ADD COLUMN `is_pay`  tinyint(1) NULL DEFAULT -1 COMMENT '是否为缴费房产/车辆 -1-否 1-是，默认-1' AFTER `car_id`;

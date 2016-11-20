@@ -1,0 +1,2 @@
+INSERT INTO `fx_sys_auth_rule` (id,module,type,name,title,module_name) VALUES(224,'Home/Repair',1,'Home/Repair/setCatchTimeout','维修时限设置','维修管理');
+UPDATE `fx_sys_role` SET rule_id = concat(rule_id, ',224') WHERE id = 3;

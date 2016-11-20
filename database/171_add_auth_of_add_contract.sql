@@ -1,0 +1,2 @@
+INSERT INTO `fx_sys_auth_rule` (id,module,type,name,title,module_name) VALUES(244,'Home/Contract',1,'Home/Contract/addcontract','新建合约','合约管理');
+UPDATE `fx_sys_role` SET rule_id = concat(rule_id, ',244') WHERE id = 3;

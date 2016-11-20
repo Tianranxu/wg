@@ -1,0 +1,1 @@
+INSERT INTO `fx_sys_wechat_templ` (id,name,style,icon1,icon2,icon3,status,reject) VALUES(3,'新年模板','newyear.css','m7.png','m8.png','m9.png',1,null);

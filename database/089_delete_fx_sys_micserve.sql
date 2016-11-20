@@ -1,0 +1,18 @@
+DROP TABLE IF EXISTS `fx_sys_micserve`;
+INSERT INTO `fx_wechat_menus` (`title`, `icon_id`, link_url, `type`) VALUES ('天气', 18, 'http://www.weather.com.cn/weather/101280601.shtml',3);
+INSERT INTO `fx_wechat_menus` (`title`, `icon_id`, link_url, `type`) VALUES ('火车', 22, 'http://train.qunar.com/',3);
+INSERT INTO `fx_wechat_menus` (`title`, `icon_id`, link_url, `type`) VALUES ('新闻', 20, 'http://news.baidu.com/',3);
+INSERT INTO `fx_wechat_menus` (`title`, `icon_id`, link_url, `type`) VALUES ('快递', 21, 'http://www.kuaidi100.com/',3);
+INSERT INTO `fx_wechat_menus` (`title`, `icon_id`, link_url, `type`) VALUES ('彩票', 22, 'http://baidu.lecai.com/lottery/draw/',3);
+INSERT INTO `fx_wechat_menus` (`title`, `icon_id`, link_url, `type`) VALUES ('黄历', 23, 'http://www.365djs.com/calendarfullyear.html',3);
+INSERT INTO `fx_wechat_menus` (`title`, `icon_id`, link_url, `type`) VALUES ('百度', 24, 'http://www.baidu.com/',3);
+INSERT INTO `fx_wechat_menus` (`title`, `icon_id`, link_url, `type`) VALUES ('音乐', 25, 'http://music.baidu.com/',3);
+INSERT INTO `fx_wechat_menus` (`title`, `icon_id`, link_url, `type`) VALUES ('翻译', 23, 'http://fanyi.baidu.com/',3);
+INSERT INTO `fx_wechat_menus` (`title`, `icon_id`, link_url, `type`) VALUES ('社区地图', 23, 'http://map.baidu.com/mobile/webapp/search/search/qt=s&da_src=pcmappg.searchBox.sugg&from=webmap&force=newsample&force=newsample&tn=B_NORMAL_MAP&hb=B_SATELLITE_STREET&openna=1&vt=map&ecom=0&wd=',3);
+Alter table `fx_comp_menus` change id id int(10);
+Alter table `fx_comp_menus` drop primary key;
+alter table `fx_comp_menus` drop column id;
+alter table `fx_comp_menus` Add column type int not null default 1 AFTER `icon_id`;
+truncate table `fx_comp_menus`;
+INSERT INTO `fx_sys_auth_rule` (id,module,type,name,title,module_name) VALUES(165,'Home/Homecompose',2,'Home/Homecompose/reset','重置菜单','首页排版');
+UPDATE `fx_sys_role` SET rule_id = concat(rule_id, ',165') WHERE id = 3;

@@ -1,0 +1,19 @@
+<!-- 加载上传插件 -->
+<script type="text/javascript" src="__PUBLIC__/js/simditor/scripts/module.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/js/simditor/scripts/uploader.min.js"></script>
+<script type="text/javascript">
+    function doUploader(obj,compid,uploadType,uploadExts,uploadCount){
+        /**上传设置**/
+        var uploader=simple.uploader({
+            url:'__APP__/uploader/index/compid/'+compid+'.html',
+            params:{type:uploadType,exts:uploadExts},
+            connectionCount:uploadCount,
+        });
+        /**开始上传**/
+        $(obj).on('change', function (e) {
+            uploader['currentObj']=this;
+            uploader.upload(this.files);
+        });
+        return uploader;
+    }
+</script>

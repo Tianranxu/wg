@@ -1,0 +1,10 @@
+ALTER TABLE `fx_wechat_menus` ADD COLUMN `image` varchar(200) NOT NULL COMMENT '目录图标';
+UPDATE `fx_wechat_menus` SET `image`='https://mmbiz.qlogo.cn/mmbiz/OObAtNqedBPR6O0wfBxtNGySvRh1FcB9BXaDrqYaX35c4YBAUiauop2rnM4qG9ibGHjWbOeibHqokHuc2EbUK62KQ/0?wx_fmt=jpeg' WHERE `id`=1;
+UPDATE `fx_wechat_menus` SET `image`='https://mmbiz.qlogo.cn/mmbiz/OObAtNqedBPR6O0wfBxtNGySvRh1FcB98s3NMb5ia1VNNvVUB59Iz7rEI1pz0WJLsKv0dGlXWUqweaLmLWHU3ow/0?wx_fmt=jpeg' WHERE `id`=2;
+UPDATE `fx_wechat_menus` SET `image`='https://mmbiz.qlogo.cn/mmbiz/OObAtNqedBPR6O0wfBxtNGySvRh1FcB96GgrWmz1y4QZ3gwbTSFjVGibVFZFI0PJTtmBxx4g5mGLm8PicSruBzDQ/0?wx_fmt=jpeg' WHERE `id`=3;
+UPDATE `fx_wechat_menus` SET `image`='https://mmbiz.qlogo.cn/mmbiz/OObAtNqedBPR6O0wfBxtNGySvRh1FcB96sCoCoNIAz5uEwGB9fx74K0Chl7vkeia4icV5AR3jiax0Hcc9WQG7qdfQ/0?wx_fmt=jpeg' WHERE `id`=4;
+UPDATE `fx_wechat_menus` SET `image`='https://mmbiz.qlogo.cn/mmbiz/OObAtNqedBPR6O0wfBxtNGySvRh1FcB9O0U9r02nxnVTrg1WWWayaYpnWeEgvGfUXMrJ0VUfQZG07HQIlA5DJg/0?wx_fmt=jpeg' WHERE `id`=5;
+UPDATE `fx_wechat_menus` SET `image`='https://mmbiz.qlogo.cn/mmbiz/OObAtNqedBPR6O0wfBxtNGySvRh1FcB9KwPpYpVibFhQGAoVwzwKxcKGiaZQQcm95pSdhFJ97CuKiaXTLg9hu3SIg/0?wx_fmt=jpeg' WHERE `id`=6;
+UPDATE `fx_wechat_menus` SET `image`='https://mmbiz.qlogo.cn/mmbiz/OObAtNqedBPR6O0wfBxtNGySvRh1FcB9UL5xG79fFThCqGR2tXOlLhrcvQI1WkYOupjIV2OEraCdxbz3fnNiblQ/0?wx_fmt=jpeg' WHERE `id`=7;
+UPDATE `fx_wechat_menus` SET `image`='https://mmbiz.qlogo.cn/mmbiz/OObAtNqedBPR6O0wfBxtNGySvRh1FcB98dXpOKT50YalLO1MvPqe5ALV96wtg2CwZuXZYCAD5Wk923bpicQRuBg/0?wx_fmt=jpeg' WHERE `id`=8;
+UPDATE `fx_wechat_menus` SET `image`='https://mmbiz.qlogo.cn/mmbiz/OObAtNqedBPR6O0wfBxtNGySvRh1FcB9nFonRI5gfZ6CnqpJS2Y3Wvyq02eenG1QjGmGkG1Z7IFmUbBpuA0jng/0?wx_fmt=jpeg' WHERE `id`=9;

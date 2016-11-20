@@ -1,0 +1,2 @@
+ALTER TABLE `fx_weixin_user` ADD COLUMN `modify_time`  datetime NULL DEFAULT NULL COMMENT '修改时间' AFTER `cm_id`;
+ALTER TABLE `fx_weixin_user` MODIFY COLUMN `mobile`  varchar(11) NULL DEFAULT NULL COMMENT '微信用户手机号码' AFTER `id`;

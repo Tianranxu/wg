@@ -1,0 +1,2 @@
+INSERT INTO `fx_sys_auth_rule` (id,module,type,name,title,module_name) VALUES(212,'Home/Publicno',1,'Home/Publicno/payinfo','微信支付设置','公众号管理');
+UPDATE `fx_sys_role` SET rule_id = concat(rule_id, ',212') WHERE id = 3;

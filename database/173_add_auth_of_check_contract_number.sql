@@ -1,0 +1,2 @@
+INSERT INTO `fx_sys_auth_rule` (id,module,type,name,title,module_name) VALUES(245,'Home/Contract',1,'Home/Contract/checkContractNumber','检查合同编号是否重复','合约管理');
+UPDATE `fx_sys_role` SET rule_id = concat(rule_id, ',245') WHERE id = 3;

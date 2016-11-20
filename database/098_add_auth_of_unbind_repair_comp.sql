@@ -1,0 +1,2 @@
+INSERT INTO `fx_sys_auth_rule` (id,module,type,name,title,module_name) VALUES(218,'Home/Property',1,'Home/Property/unbindRepairComp','解绑维修公司','楼盘管理');
+UPDATE `fx_sys_role` SET rule_id = concat(rule_id, ',218') WHERE id = 3;

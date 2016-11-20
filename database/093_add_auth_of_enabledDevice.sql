@@ -1,0 +1,2 @@
+INSERT INTO `fx_sys_auth_rule` (id,module,type,name,title,module_name) VALUES(215,'Home/Device',1,'Home/Device/enabledDeivce','启用设备','故障设备');
+UPDATE `fx_sys_role` SET rule_id = concat(rule_id, ',215') WHERE id = 1;
